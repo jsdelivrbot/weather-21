@@ -7,7 +7,7 @@ import {
 } from "react-sparklines";
 
 function average(data) {
-  return _.round(_.sum(data) / data.length);
+  return _.round(_.sum(data) / data.length - 273.15);
 }
 
 export default props => {
