@@ -10,8 +10,7 @@
   },
   "scripts": {
     "dev": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
-    "prod": "set NODE_ENV=production && webpack -p",
-    "postinstall": "NPM_CONFIG_PRODUCTION=false webpack -p",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false webpack --config webpack.prod.js",
     "start": "node server.js"
   },
   "author": "",
