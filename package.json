@@ -10,8 +10,8 @@
   },
   "scripts": {
     "dev": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false webpack --config webpack.prod.js",
-    "start": "node server.js"
+    "start": "node server.js",
+    "postinstall": "node ./heroku-build.js"
   },
   "author": "",
   "license": "ISC",
