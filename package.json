@@ -11,7 +11,7 @@
   "scripts": {
     "dev": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "start": "node server.js",
-    "build:all": "node ./ops/heroku-build.js",
+    "build:all": "webpack -p --progress",
     "postinstall": "node ./ops/heroku-build.js"
   },
   "author": "",
