@@ -11,7 +11,7 @@
   "scripts": {
     "dev": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "prod": "set NODE_ENV=production && webpack -p",
-    "postinstall": "NODE_ENV=production webpack -p",
+    "postinstall": "NPM_CONFIG_PRODUCTION=false webpack -p",
     "start": "node server.js"
   },
   "author": "",
