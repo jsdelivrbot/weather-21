@@ -10,7 +10,8 @@
   },
   "scripts": {
     "dev": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
-    "postinstall": "./node_modules/webpack/bin/webpack.js -p",
+    "prod": "set NODE_ENV=production && webpack -p",
+    "postinstall": "NODE_ENV=production webpack -p",
     "start": "node server.js"
   },
   "author": "",
