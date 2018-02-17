@@ -1,7 +1,6 @@
 import React from "react";
-import logo from '../images/logo.png';
 
-console.log(logo);
+import logo from '../images/logo.png';
 
 export default () => {
   return (

@@ -1,11 +1,10 @@
-// import _ from 'lodash';
+import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchWeather } from '../actions/index';
-import countries from '../components/countries';
-// var countries = require('country-list')();
-// const countries = cl();
+
+import { fetchWeather } from '../actions';
+import countries from '../countries';
 
 class SearchBar extends Component {
   constructor(props) {
@@ -23,7 +22,6 @@ class SearchBar extends Component {
   }
 
   onSelectChange(event) {
-    console.log(event.target);
     this.setState({ country: event.target.value });
   }
 
@@ -40,7 +38,6 @@ class SearchBar extends Component {
   }
 
   render() {
-    console.log(countries);
     return (
       <form onSubmit={this.onFormSubmit}>
         <div className="form-row">
