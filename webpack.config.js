@@ -1,5 +1,3 @@
-const webpack = require("webpack");
-
 module.exports = {
   entry: ["./src/index.js"],
   output: {
@@ -13,7 +11,7 @@ module.exports = {
         exclude: /node_modules/,
         loader: "babel-loader",
         options: {
-          presets: ["react", "env", "stage-3"]
+          presets: ["@babel/react", "@babel/env"]
         }
       },
       // { test: /\.(png|jpg|gif)$/, loader: "url-loader?limit=8192" },
@@ -29,6 +27,8 @@ module.exports = {
   },
   devServer: {
     historyApiFallback: true,
-    contentBase: "./"
-  }
+    contentBase: "./",
+    open: true
+  },
+  mode: 'production'
 };
