@@ -11,7 +11,7 @@
   "scripts": {
     "start": "webpack --mode production",
     "dev": "webpack-dev-server",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm i && npm run start"
+    "heroku-postbuild": "npm i && npm run start"
   },
   "author": "",
   "license": "ISC",
