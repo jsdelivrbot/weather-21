@@ -10,7 +10,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false webpack -p --progress"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run start"
   },
   "author": "",
   "license": "ISC",
