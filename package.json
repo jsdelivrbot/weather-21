@@ -9,8 +9,9 @@
     "npm": "6.4.1"
   },
   "scripts": {
-    "start": "webpack-dev-server",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false webpack -p"
+    "start": "node server.js",
+    "dev": "webpack-dev-server",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false webpack --mode production && npm run start"
   },
   "author": "",
   "license": "ISC",
