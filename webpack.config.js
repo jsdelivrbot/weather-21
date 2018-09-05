@@ -1,18 +1,11 @@
+const path = require('path');
+
 module.exports = {
-  entry: ["./src/index.js"],
-  output: {
-    path: __dirname,
-    publicPath: "/",
-    filename: "bundle.js"
-  },
   module: {
     rules: [
       {
         exclude: /node_modules/,
-        loader: "babel-loader",
-        options: {
-          presets: ["@babel/react", "@babel/env"]
-        }
+        loader: "babel-loader"
       },
       // { test: /\.(png|jpg|gif)$/, loader: "url-loader?limit=8192" },
       {
@@ -26,9 +19,11 @@ module.exports = {
     extensions: [".js", ".jsx"]
   },
   devServer: {
+    contentBase: path.resolve(__dirname, "dist"),
     historyApiFallback: true,
-    contentBase: "./",
-    open: true
-  },
-  mode: 'production'
+    inline: true,
+    open: true,
+    compress: true,
+    hot: true
+  }
 };
