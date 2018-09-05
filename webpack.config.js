@@ -1,10 +1,15 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const HtmlWebpackPluginConfig = new HtmlWebPackPlugin({
   template: './index.html',
   filename: 'index.html'
+});
+const MiniCssExtractPluginConfig = new MiniCssExtractPlugin({
+  filename: '[name].css',
+  chunkFilename: '[id].css'
 });
 const HMR = new webpack.HotModuleReplacementPlugin();
 
@@ -25,7 +30,10 @@ module.exports = {
           }
         ]
       },
-      // { test: /\.(png|jpg|gif)$/, loader: "url-loader?limit=8192" },
+      {
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader']
+      },
       {
         test: /\.(png|jpg|gif)$/,
         loader: 'file-loader',
@@ -41,5 +49,5 @@ module.exports = {
     compress: true,
     hot: true
   },
-  plugins: [HtmlWebpackPluginConfig, HMR]
+  plugins: [HtmlWebpackPluginConfig, MiniCssExtractPluginConfig, HMR]
 };
