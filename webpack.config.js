@@ -1,15 +1,18 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 const HtmlWebpackPluginConfig = new HtmlWebPackPlugin({
   template: './index.html',
   filename: 'index.html'
 });
+const HMR = new webpack.HotModuleReplacementPlugin();
 
 module.exports = {
   module: {
     rules: [
       {
+        test: /\.(js|jsx)/,
         exclude: /node_modules/,
         loader: 'babel-loader'
       },
@@ -30,9 +33,6 @@ module.exports = {
       }
     ]
   },
-  resolve: {
-    extensions: ['.js', '.jsx']
-  },
   devServer: {
     contentBase: './',
     historyApiFallback: true,
@@ -41,5 +41,5 @@ module.exports = {
     compress: true,
     hot: true
   },
-  plugins: [HtmlWebpackPluginConfig]
+  plugins: [HtmlWebpackPluginConfig, HMR]
 };
